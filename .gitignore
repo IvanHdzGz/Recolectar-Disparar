@@ -6,10 +6,10 @@
 [Ll]ogs/
 UserSettings/
 
-# Visual Studio
-.vs/
+.vscode/
+*.sln
+*.slnx
 *.csproj
 *.unityproj
-*.sln
 *.user
 *.tmp
