@@ -59,6 +59,11 @@ Scripts principales:
 
 ---
 
+## Controles 
+- Movimiento: Teclas A, W, S, D
+- Salto: Tecla Space
+- Ataque: Botón izquierdo del ratón LMB 
+
 - Programación orientada a componentes
 - Sistemas de física
 - IA básica
