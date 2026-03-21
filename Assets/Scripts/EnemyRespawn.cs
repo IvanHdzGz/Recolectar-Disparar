@@ -8,6 +8,7 @@ public class EnemyRespawn : MonoBehaviour {
     private NavMeshAgent agent;
     private Renderer[] renderers;
     private Collider[] colliders;
+    public AudioClip destroySound;
 
     void Start() {
         startPosition = transform.position;
