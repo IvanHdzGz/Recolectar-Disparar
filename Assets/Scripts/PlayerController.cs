@@ -17,8 +17,10 @@ public class PlayerController : MonoBehaviour
 	public GameObject winTextObject;
 	public AudioClip winSound;
 	public AudioClip loseSound;
+	private bool isDead = false;
 	private AudioSource audioSource;
 	public AudioClip shootSound;
+	public GameObject pickupVFX;
 
 	void Start()
 	{
@@ -50,15 +52,27 @@ public class PlayerController : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("PickUp"))
 		{
+			if (pickupVFX != null)
+			{
+				GameObject vfx = Instantiate(pickupVFX, other.transform.position, Quaternion.identity);
+
+				ParticleSystem ps = vfx.GetComponent<ParticleSystem>();
+				if (ps != null)
+				{
+					ps.Play();
+				}
+			}
+
 			audioSource.Play();
 			other.gameObject.SetActive(false);
+
 			count++;
 			SetCountText();
 		}
 	}
 	void SetCountText()
 	{
-		countText.text = "Count: " + count.ToString();
+		countText.text = "Coins: " + count.ToString();
 
 		if (count >= 12)
 		{
@@ -83,6 +97,8 @@ public class PlayerController : MonoBehaviour
 	}
 	void OnAttack()
 	{
+		if (isDead) return;
+
 		GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
 
 		Vector3 shootDirection = Camera.main.transform.forward;

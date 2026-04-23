@@ -9,9 +9,9 @@ public class PlayerHealth : MonoBehaviour
     public float damageCooldown = 1f;
     private bool canTakeDamage = true;
     public TextMeshProUGUI healthText;
-    public GameObject winTextObject;
     private AudioSource audioSource;
     public AudioClip loseSound;
+    public GameObject deathVFX;
 
     void Start()
     {
@@ -65,6 +65,17 @@ public class PlayerHealth : MonoBehaviour
     void Die()
     {
         PlayerController pc = GetComponent<PlayerController>();
+
+        if (deathVFX != null)
+        {
+            GameObject vfx = Instantiate(deathVFX, transform.position, Quaternion.identity);
+
+            ParticleSystem ps = vfx.GetComponent<ParticleSystem>();
+            if (ps != null)
+            {
+                ps.Play();
+            }
+        }
 
         if (pc != null && pc.winTextObject != null)
         {

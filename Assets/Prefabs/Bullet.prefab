@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5892446559572784755}
   - component: {fileID: 6979560289368093930}
   - component: {fileID: 8350888508492487127}
-  - component: {fileID: 4936422086861260511}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -156,18 +155,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   speed: 20
   lifeTime: 3
---- !u!114 &4936422086861260511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7643994600992036885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e021b05008fa4341a7e9d13de88536a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  respawnTime: 3
-  respawnRange: 5
-  maxAttempts: 10

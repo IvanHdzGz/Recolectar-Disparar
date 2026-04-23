@@ -19,12 +19,7 @@ public class Bullet : MonoBehaviour
 
         if (enemy != null)
         {
-            if (enemy.destroySound != null)
-            {
-                AudioSource.PlayClipAtPoint(enemy.destroySound, collision.transform.position);
-            }
-
-            Destroy(enemy.gameObject);
+            enemy.Die();
         }
 
         Destroy(gameObject);
