@@ -24,11 +24,14 @@ public class PlayerController : MonoBehaviour
 
 	void Start()
 	{
-		rb = GetComponent<Rigidbody>();
-		audioSource = GetComponent<AudioSource>();
 		count = 0;
 		SetCountText();
 		winTextObject.SetActive(false);
+	}
+	void Awake()
+	{
+		rb = GetComponent<Rigidbody>();
+		audioSource = GetComponent<AudioSource>();
 	}
 	void OnMove(InputValue movementValue)
 	{
