@@ -15,10 +15,14 @@ public class Bullet : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        EnemyRespawn enemy = collision.gameObject.GetComponentInParent<EnemyRespawn>();
+        Debug.Log("Golpeó: " + collision.gameObject.name);
+
+        EnemyRespawn enemy =
+            collision.gameObject.GetComponentInParent<EnemyRespawn>();
 
         if (enemy != null)
         {
+            Debug.Log("Encontró EnemyRespawn");
             enemy.Die();
         }
 

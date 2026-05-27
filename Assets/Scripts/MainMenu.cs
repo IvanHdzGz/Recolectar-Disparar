@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour
 
     public Slider volumeSlider;
     public Slider enemySpeedSlider;
+    public Animator enemyAnimator;
 
     void Start()
     {
@@ -58,6 +59,11 @@ public class MainMenu : MonoBehaviour
             }
             enemySpeedSlider.onValueChanged.AddListener(SetEnemySpeed);
         }
+
+        if (enemyAnimator != null)
+        {
+            enemyAnimator.enabled = false;
+        }
     }
 
     public void PlayGame()
@@ -81,6 +87,11 @@ public class MainMenu : MonoBehaviour
 
         if (musicSource != null)
             musicSource.Play();
+
+        if (enemyAnimator != null)
+        {
+            enemyAnimator.enabled = true;
+        }
     }
 
     public void OpenSettings()
